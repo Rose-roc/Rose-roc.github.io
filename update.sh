@@ -1,0 +1,9 @@
+# 自动推送
+# 先进入博客目录，根据你自己的情况更改
+cd E:/blog
+# 更新博客三件套
+hexo clean
+hexo g
+hexo d
+# 备份博客
+hexo backup

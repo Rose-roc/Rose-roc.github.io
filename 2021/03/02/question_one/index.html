@@ -151,29 +151,21 @@
 </nav>
 
         <div id="main" >
-            <div class ="post_page_title_img" style="height: 25rem;background-image: url(/img/03.png);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
-                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >对于博客在hexo的next主题下的简单使用</h2></a>
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(/img/05.png);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >question_one</h2></a>
             </div>
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
-                <h3 id="文章的创建"><a href="#文章的创建" class="headerlink" title="文章的创建"></a>文章的创建</h3><p>当我们突发奇想，或者遇到奇事想分享时，就可以在个人博客中发表文章，首先是要创建文章</p>
-<p>在站点文件夹中打开 git bash，输入如下命令，其中<code>title</code>是文章的标题</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new &quot;title&quot;</span><br></pre></td></tr></table></figure>
-
-<p>输入命令后，就会在<code>source/_post</code>文件夹下创建一个md文件，命名为title.md</p>
-<h3 id="文章的编写"><a href="#文章的编写" class="headerlink" title="文章的编写"></a>文章的编写</h3><p>创建好文件后，我们在文件进行内容的编写，首先要明白Markdown的语法，关于Markdown的使用，将另外进行发表。</p>
-<h3 id="文章的头部"><a href="#文章的头部" class="headerlink" title="文章的头部"></a>文章的头部</h3><p>在我们创建好的md文件中，我们需要有对文章内容进行说明的文字，称为文章头部</p>
-<p>文章的头部除了可以设置标题、发布日期等基础信息，还可以添加标签、分类等</p>
-<p>以下是我进行next主题优化后所需要的文章头部的内容</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">title: 文章名</span><br><span class="line">categories: 分类名</span><br><span class="line">tags: </span><br><span class="line">	- 标签一</span><br><span class="line">	- 标签二</span><br><span class="line">copyright: true #文章版权说明</span><br><span class="line">top: 1 #数字越大文章越靠前</span><br></pre></td></tr></table></figure>
-
-<p><strong>注：</strong>属性和属性值之间必须有一个空格，否则会解析错误</p>
-<h3 id="文章的发布"><a href="#文章的发布" class="headerlink" title="文章的发布"></a>文章的发布</h3><p>一切就绪后，就该开开心心的发表文章了</p>
-<p>在站点文件夹中打开git bash，输入如下命令即可发布</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g -d</span><br></pre></td></tr></table></figure>
-
-<p><strong>个人建议</strong>：在使用 <code>hexo g</code> 命令后，先使用 <code>hexo s</code> 命令，运行本地站点，然后在<a target="_blank" rel="noopener" href="http://lacolhost:4000/">http://lacolhost:4000/</a> 查看运行结果，感觉十分完美后再使用 <code>hexo d</code> 发布</p>
-<p><strong>注：</strong>在我们对博客首页的文章进行精简显示后，我们可以在文章中使用<code>&lt;!--more--&gt;</code>标签，则表示文章只会显示标签前面的内容</p>
+                <h3 id="今日份刷题"><a href="#今日份刷题" class="headerlink" title="今日份刷题"></a>今日份刷题</h3><h4 id="onSaveInstanceState方法会在什么时候被执行？"><a href="#onSaveInstanceState方法会在什么时候被执行？" class="headerlink" title="onSaveInstanceState方法会在什么时候被执行？"></a>onSaveInstanceState方法会在什么时候被执行？</h4><p>1、当用户按下HOME键时。 这是显而易见的，系统不知道你按下HOME后要运行多少其他的程序，自然也不知道activity A是否会被销毁，故系统会调用onSaveInstanceState，让用户有机会保存某些非永久性的数据。以下几种情况的分析都遵循该原则 2、长按HOME键，选择运行其他的程序时。 3、按下电源按键（关闭屏幕显示）时。 4、从activity A中启动一个新的activity时。 5、屏幕方向切换时，例如从竖屏切换到横屏时。</p>
+<h4 id="简述View-Touch事件传递机制。"><a href="#简述View-Touch事件传递机制。" class="headerlink" title="简述View Touch事件传递机制。"></a>简述View Touch事件传递机制。</h4><p>dispatchTouchEvent：进行事件的分发（传递）。返回值是 boolean 类型，受当前onTouchEvent和下级view的dispatchTouchEvent影响</p>
+<p>onInterceptTouchEvent：对事件进行拦截。该方法只在ViewGroup中有，View（不包含 ViewGroup）是没有的。一旦拦截，则执行ViewGroup的onTouchEvent，在ViewGroup中处理事件，而不接着分发给View。且只调用一次，所以后面的事件都会交给ViewGroup处理。</p>
+<p>onTouchEvent：进行事件处理。</p>
+<h4 id="为什么在子线程中执行-new-Handler-会抛出异常"><a href="#为什么在子线程中执行-new-Handler-会抛出异常" class="headerlink" title="为什么在子线程中执行 new Handler() 会抛出异常?"></a>为什么在子线程中执行 new Handler() 会抛出异常?</h4><p>当创建Handler时会先获取当前线程的Looper，若Looper为null则抛出异常。</p>
+<h4 id="invalidate-和postInvalidate-的区别？"><a href="#invalidate-和postInvalidate-的区别？" class="headerlink" title="invalidate()和postInvalidate()的区别？"></a>invalidate()和postInvalidate()的区别？</h4><p>invalidate()与postInvalidate()都用于刷新View，主要区别是invalidate()在主线程中调用，若在子线程中使用需要配合handler；而postInvalidate()可在子线程中直接调用。</p>
+<h4 id="res目录和assets目录的区别？"><a href="#res目录和assets目录的区别？" class="headerlink" title="res目录和assets目录的区别？"></a>res目录和assets目录的区别？</h4><p>res/raw中的文件会被映射到R.java文件中，访问时可直接使用资源ID，不可以有目录结构。</p>
+<p>assets文件夹下的文件不会被映射到R.java中，访问时需要AssetManager类，可以创建子文件夹。</p>
+<h4 id="onTouch-、onTouchEvent-和onClick-关系？"><a href="#onTouch-、onTouchEvent-和onClick-关系？" class="headerlink" title="onTouch()、onTouchEvent()和onClick()关系？"></a>onTouch()、onTouchEvent()和onClick()关系？</h4><p>优先度onTouch()&gt;onTouchEvent()&gt;onClick()。因此onTouchListener的onTouch()方法会先触发；如果onTouch()返回false才会接着触发onTouchEvent()，同样的，内置诸如onClick()事件的实现等等都基于onTouchEvent()；如果onTouch()返回true，这些事件将不会被触发。</p>
+<h4 id="android中如何处理耗时操作，-有哪几种方法？为什么子线程不能更新UI？"><a href="#android中如何处理耗时操作，-有哪几种方法？为什么子线程不能更新UI？" class="headerlink" title="android中如何处理耗时操作， 有哪几种方法？为什么子线程不能更新UI？"></a>android中如何处理耗时操作， 有哪几种方法？为什么子线程不能更新UI？</h4><p>Android处理耗时的操作基本思路为将耗时的操作放到非UI线程执行。常用的是AsyncTask，Handler和Thread，Loaders.<br>主要问题是java的线程安全，如果不在主线程更新ui，多个子线程同时给TextView设值，TextView的显示就会出现问题，不知道最终显示哪一个线程的值</p>
 
             </div>
 
@@ -236,8 +228,8 @@ $('.btn_click_load').click(function() {
 -->
 <script type="text/javascript">
     var disqus_config = function () {
-        this.page.url = 'https://rose-roc.github.io/2021/03/01/simple_use/';  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = 'https://rose-roc.github.io/2021/03/01/simple_use/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = 'https://rose-roc.github.io/2021/03/02/question_one/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'https://rose-roc.github.io/2021/03/02/question_one/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
 </script>
 

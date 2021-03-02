@@ -265,3 +265,49 @@ WeakReference与ReferenceQueue联合使用，在弱引用关联的对象被回�
 2.对于引用生命周期不一样的对象，可以用软引用或弱引用SoftReferner WeakReferner
 3.对于资源对象 使用finally 强制关闭
 4.内存压力过大就要统一的管理内存
+
+#### 请写出广播的两种注册形式。他们区别在哪？
+
+第一种：使用代码进行订阅
+
+```java
+IntentFilter filter = new IntentFilter("android.provider.Telephony.SMS_RECEIVED"); 
+IncomingSMSReceiver receiver = new IncomingSMSReceiver(); 
+registerReceiver(receiver, filter); 
+```
+
+
+
+第二种：在AndroidManifest.xml文件中的节点里进行订阅:
+
+```xml
+<receiver android:name=".IncomingSMSReceiver"> 
+
+ 	<intent-filter> 
+
+ 		<action android:name="android.provider.Telephony.SMS_RECEIVED"/> 
+
+	</intent-filter> 
+
+</receiver> 
+```
+
+在AndroidManifest中进行注册后，不管改应用程序是否处于活动状态，都会进行监听。
+
+在代码中进行注册后，当应用程序关闭后，就不再进行监听。
+
+#### Activity A 跳转Activity B，Activity B再按back键回退，两个过程各自的生命周期
+
+ActivityA和ActivityB生命周期执行顺序如下： A.onPause －> B.onCreate －> B.onStart－> B.onResume－> A.onStop
+
+ActivityB 按back键回退
+按下back键后： B.onPause－>A.onRestart－>A.onStart－>A.onResume－>B.onStop－>B.onDestory
+
+#### 聊聊RecyclerView的缓存机制。
+
+RecyclerView是四级缓存。
+
+一级缓存  mAttachedScrap和mChangedScrap  这是优先级最高的缓存，RecyclerView在获取ViewHolder时,优先会到这两个缓存来找。其中mAttachedScrap存储的是当前还在屏幕中的ViewHolder，mChangedScrap存储的是数据被更新的ViewHolder,比如说调用了Adapter的notifyItemChanged方法。可能有人对这两个缓存还是有点疑惑，不要急，待会会详细的解释。
+二级缓存  mCachedViews  默认大小为2，通常用来存储预取的ViewHolder，同时在回收ViewHolder时，也会可能存储一部分的ViewHolder，这部分的ViewHolder通常来说，意义跟一级缓存差不多。
+三级缓存  ViewCacheExtension  自定义缓存,通常用不到，在本文中先忽略
+四级缓存  RecyclerViewPool  根据ViewType来缓存ViewHolder，每个ViewType的数组大小为5，可以动态的改变。

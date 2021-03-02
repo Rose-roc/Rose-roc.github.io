@@ -1,5 +1,5 @@
 ---
-title: time_consuming
+title: 处理耗时操作的几种方法
 date: 2021-03-02 12:53:43
 tags:
  - android
@@ -59,11 +59,11 @@ public abstract class AsyncTask<Params, Progress, Result> {
 
 ###### 核心方法
 
-![核心方法](E:\blog\source\_posts\time-consuming\944365-153fb37764704129.webp)
+![核心方法](\time-consuming\944365-153fb37764704129.webp)
 
 ###### 执行顺序
 
-![执行顺序](E:\blog\source\_posts\time-consuming\944365-31df794006c69621.webp)
+![执行顺序](\time-consuming\944365-31df794006c69621.webp)
 
 ###### 使用步骤
 
@@ -284,7 +284,7 @@ public class MainActivity extends AppCompatActivity {
 }
 ```
 
-![示例图片](E:\blog\source\_posts\time-consuming\944365-23bdf9a3bc62e825.webp)
+![示例图片](\time-consuming\944365-23bdf9a3bc62e825.webp)
 
 #### ② Handle
 
@@ -378,7 +378,7 @@ private Handler mHandler;
 
 ##### 4. handle机制
 
-![handle机制](E:\blog\source\_posts\time-consuming\4843132-4fb0e00953a4111d.webp)
+![handle机制](\time-consuming\4843132-4fb0e00953a4111d.webp)
 
 Handler机制，主要牵涉到的类有如下四个，它们分工明确，但又相互作用
 
